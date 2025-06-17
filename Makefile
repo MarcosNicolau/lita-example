@@ -1,3 +1,5 @@
+.PHONY: compile_program program_to_base64 run_program prove_program verify_program run_web_app
+
 SHELL := /bin/bash
 
 compile_program:
@@ -17,7 +19,7 @@ prove_program: compile_program
 verify_program:
 	cargo run --release --manifest-path ./verifier/Cargo.toml
 
-compile_front_end: program_to_base64
+run_web_app: program_to_base64
 	cp test_data/program.base64 ./app/program.base64
 	cd app && \
 	npm install && npm run start
