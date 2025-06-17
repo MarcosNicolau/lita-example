@@ -14,7 +14,7 @@ run_program: compile_program
 	cat test_data/stdin | valida run ./test_data/program.bin test_data/stdout
 
 prove_program: compile_program
-	valida prove ./program/program.bin ./test_data/proof.bin ./test_data/stdin
+	valida prove ./test_data/program.bin ./test_data/proof.bin ./test_data/stdin
 
 verify_program:
 	cargo run --release --manifest-path ./verifier/Cargo.toml
