@@ -8,14 +8,18 @@ module.exports = {
         filename: "bootstrap.js",
     },
     mode: "development",
-    plugins: [new CopyWebpackPlugin(["index.html"])],
+    plugins: [
+        new CopyWebpackPlugin({
+            patterns: [{ from: "index.html" }],
+        }),
+    ],
     experiments: {
         asyncWebAssembly: true,
     },
     module: {
         rules: [
             {
-                test: /\.base64/,
+                test: /\.base64$/,
                 type: "asset/source",
             },
         ],
