@@ -16,7 +16,6 @@ fn main() {
         &stdout.as_ref(),
         Default::default(),
         Default::default(),
-        Default::default(),
     );
     assert_eq!(verify_status_correct_statement, VerifyStatus::Success);
 
